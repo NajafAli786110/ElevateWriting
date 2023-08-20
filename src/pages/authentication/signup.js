@@ -1,9 +1,9 @@
-import Form from "@/components/auth/form";
+import Form from "@/pages/component/auth/form";
 
 export default function SignUp () {
     const onSubmit = async (email, password) => {
         try {
-            const response = await fetch("/api/auth/signup", {
+            const response = await fetch("/src/pages/api/auth/signup.js", {
                 method: "POST",
                 body: JSON.stringify({email, password}),
                 headers: {
