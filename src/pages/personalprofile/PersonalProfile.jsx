@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const PersonalProfile = () => {
@@ -9,7 +10,10 @@ const PersonalProfile = () => {
         </h2>
       </div>
       <div className="w-full all-blogs-section flex justify-center items-center pt-12">
-        <div className="container flex gap-8 py-4">
+        <div className="container flex flex-col gap-8 py-4">
+        <Link href={"/userdashboard/Dashboard"}>
+        <h3 className="blog-heading text-3xl font-semibold">Go to Dashboard</h3>
+        </Link>
         <div className="post-blog w-3/4 bg-white border-2 border-gray-200 p-6 rounded-xl" >
             <div className="user-info flex flex-col gap-2 mb-3">
                 <img src="https://miro.medium.com/v2/resize:fit:640/0*ngAthWxOvKZHvsw9" alt="" className='user-profile-img'/>

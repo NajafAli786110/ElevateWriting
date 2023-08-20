@@ -1,7 +1,16 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Blogs = (props) => {
+  const router = useRouter();
+  const isUserProfile = router.pathname.includes("/userprofile");
+
+  const linkText = isUserProfile
+    ? "Back to all blogs"
+    : "See all from this user";
+  const linkPath = isUserProfile ? "/" : "/userprofile/profile";
+
   return (
     <div className="bg-white home-blogs mb-4">
       <div className="flex flex-col gap-4">
@@ -21,9 +30,9 @@ const Blogs = (props) => {
         </p>
         <Link
           className="text-base font-normal blog-user-btn"
-          href="/userprofile/profile"
+          href={linkPath}
         >
-          see all from this user
+          {linkText}
         </Link>
       </div>
     </div>

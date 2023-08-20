@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Blogs from "../Home/HomeComponents/Blogs";
+import Link from "next/link";
 
 const profile = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     async function fetchPosts() {
-      const response = await fetch('/api/post');
+      const response = await fetch("/api/post");
       const data = await response.json();
       console.log(data);
       setPosts(data);
@@ -39,11 +40,13 @@ const profile = () => {
               elon@openai.com
             </p>
             <h3 className="user-name">Elon Musk</h3>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg"
-              className="user_image"
-              alt="Ellon Musk"
-            />
+            <Link href={"/personalprofile/PersonalProfile"}>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg"
+                className="user_image"
+                alt="Ellon Musk"
+              />
+            </Link>
           </div>
         </div>
       </div>
